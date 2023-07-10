@@ -1,0 +1,19 @@
+h1 {
+  font-weight: 400;
+}
+
+.toggleColourModeButton {
+  transform: scale(1.5);
+}
+
+.toggleColourModeButtonPaper {
+  width: 52px;
+  height: 52px;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  position: absolute;
+  top: 18px;
+  right: 18px;
+}
