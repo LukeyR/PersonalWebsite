@@ -5,6 +5,42 @@ import WebFont from "webfontloader";
 import {createTheme, CssBaseline, ThemeProvider, useMediaQuery} from "@mui/material";
 import Main from "./components/main.jsx";
 
+
+const getDesignTokens = (useDarkMode) => {
+
+    let shared = {
+        primary: {
+            main: "#4649DC"
+        }
+    }
+
+    let mode = useDarkMode ? "dark" : "light"
+
+    return (
+        {
+            palette: {
+                mode,
+                ...(mode === 'light'
+                    ? {
+                        ...shared,
+                        // palette values for light mode
+                        background: {
+                            default: "#FFFBFF"
+                        },
+                        text: {
+                            primary: "#5D5D72"
+                        }
+                    }
+                    : {
+                        ...shared,
+                        text: {
+                            primary: "#FFFBFF"
+                        }
+                    }),
+            },
+        })
+};
+
 function App() {
   useEffect(() => {
    WebFont.load({
@@ -19,11 +55,7 @@ function App() {
 
   const theme = React.useMemo(
   () =>
-    createTheme({
-      palette: {
-        mode: useDarkMode ? 'dark' : 'light',
-      },
-    }),
+     createTheme(getDesignTokens(useDarkMode)),
   [useDarkMode],
   );
 

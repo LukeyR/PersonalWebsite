@@ -3,11 +3,15 @@ import {ReactComponent as DarkModeIcon} from "../assets/light_mode_black_24dp.sv
 import {ReactComponent as LightModeIcon} from "../assets/dark_mode_black_24dp.svg";
 import {useState} from "react";
 import "./colour_mode_icon.scss";
+import {useTheme} from "@mui/material";
 
 function Icon({darkMode, ...props}) {
+
+  const theme = useTheme()
+
   return (
     <>
-      {darkMode ? <DarkModeIcon {...props} /> : <LightModeIcon {...props} />}
+      {darkMode ? <DarkModeIcon {...props}  fill={theme.palette.primary.main}/> : <LightModeIcon {...props} fill={theme.palette.primary.main} />}
     </>
   )
 }
