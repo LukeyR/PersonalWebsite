@@ -21,9 +21,16 @@ h1 {
   right: 18px;
 }
 
-.sourceCodePosiioning {
+.sourceCodePositioning {
   position: absolute;
   bottom: 18px;
   left: 50%;
   transform: translate(-50%, 0%);
+}
+
+.paperBackground {
+  padding: 2rem;
+  gap: 2rem;
+  align-items: center;
+  display: flex;
 }
