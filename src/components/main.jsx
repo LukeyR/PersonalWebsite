@@ -32,7 +32,7 @@ function Introduction() {
                     </Typography>
                 )
             }
-            <Link href="mailto: contact@ltroberts.co.uk"
+            <Link href="mailto:contact@ltroberts.co.uk"
                   color={theme.palette.primary.main}>contact@ltroberts.co.uk</Link>
         </>
     )
