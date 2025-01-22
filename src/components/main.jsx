@@ -4,6 +4,7 @@ import {Avatar, Box, Card, Divider, Link, Typography, useTheme} from "@mui/mater
 import CodeIcon from "@mui/icons-material/Code";
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
+import ProfilePicture from "../assets/pp.png"
 
 function Introduction() {
 
@@ -81,7 +82,7 @@ function Main({useDarkMode, setUseDarkMode, defaultDarkMode}) {
                 <Avatar
                     sx={{ width: 151, height: 151,
                         border: `0.15rem solid ${theme.palette.primary.main}` }}
-                    src="/src/assets/pp.png"
+                    src={ProfilePicture}
                     alt="A photo of me"
                 />
                 <Divider orientation="vertical" flexItem />
