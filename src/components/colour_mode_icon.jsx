@@ -1,6 +1,6 @@
 import Paper from "@mui/material/Paper";
-import {ReactComponent as DarkModeIcon} from "../assets/light_mode_black_24dp.svg";
-import {ReactComponent as LightModeIcon} from "../assets/dark_mode_black_24dp.svg";
+import DarkModeIcon from "../assets/light_mode_black_24dp.svg?react";
+import LightModeIcon from "../assets/dark_mode_black_24dp.svg?react";
 import {useState} from "react";
 import "./colour_mode_icon.scss";
 import {useTheme} from "@mui/material";

@@ -1,7 +1,8 @@
 import "./main.scss"
 import DarkModeToggle from "./colour_mode_icon.jsx";
-import {Avatar, Box, Card, Divider, Link, Typography, useTheme} from "@mui/material";
+import {Avatar, Box, Card, Link, Typography, useTheme} from "@mui/material";
 import CodeIcon from "@mui/icons-material/Code";
+import Grid from "@mui/material/Grid2"
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import ProfilePicture from "../assets/pp.png"
@@ -25,8 +26,8 @@ function Introduction() {
                 Software Engineer currently open to exciting new opportunities
             </Typography>
             {
-                lines.map((line) =>
-                    <Typography style={{color: theme.palette.text.primary}}>
+                lines.map((line, idx) =>
+                    <Typography style={{color: theme.palette.text.primary}} key={`formerly-line-${idx}`}>
                         {line}
                     </Typography>
                 )
@@ -79,17 +80,48 @@ function Main({useDarkMode, setUseDarkMode, defaultDarkMode}) {
             <DarkModeToggle setUseDarkMode={setUseDarkMode} useDarkMode={useDarkMode} className={"darkModeToggle"}
                             defaultDarkMode={defaultDarkMode}/>
             <Card className={"paperBackground"}>
-                <Avatar
-                    sx={{ width: 151, height: 151,
-                        border: `0.15rem solid ${theme.palette.primary.main}` }}
-                    src={ProfilePicture}
-                    alt="A photo of me"
-                />
-                <Divider orientation="vertical" flexItem />
-                <Box>
-                <Introduction/>
-                <Links/>
-                </Box>
+                <Grid
+                    container
+                    spacing={2}
+                    sx={{
+                        padding: 2,
+                        display: 'flex',
+                        justifyContent: 'center',
+                        alignItems: 'center'
+                    }}
+                >
+                    <Grid
+                        xs={12}
+                        md={4}
+                        sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}
+                    >
+                        <Avatar
+                            sx={{
+                                width: 151,
+                                height: 151,
+                                border: `0.15rem solid ${theme.palette.primary.main}`,
+                            }}
+                            src={ProfilePicture}
+                            alt="A photo of me"
+                        />
+                    </Grid>
+                    <Grid
+                        item
+                        xs={12}
+                        md={1}
+                    >
+                    </Grid>
+                    <Grid
+                        xs={12}
+                        md={7}
+                        sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}
+                    >
+                        <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                            <Introduction />
+                            <Links />
+                        </Box>
+                    </Grid>
+                </Grid>
             </Card>
             <div className={"sourceCodePositioning"}>
                 <LinkableIcon sx={{"&:hover": {color: `${theme.palette.primary.main} !important`}}}
