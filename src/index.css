@@ -20,5 +20,5 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
-  transition: all 450ms ease-in-out;
+  transition: all 200ms ease-in-out;
 }
