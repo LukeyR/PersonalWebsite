@@ -106,7 +106,6 @@ function Main({useDarkMode, setUseDarkMode, defaultDarkMode}) {
                         />
                     </Grid>
                     <Grid
-                        item
                         xs={12}
                         md={1}
                     >
